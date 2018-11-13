@@ -11,4 +11,10 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v10' // mapbox has lots of different map styles available
 })
 
-buildMarker('hotels', [-73.009, 40.705]).addTo(map)
+let doubletree = buildMarker('hotels', [-74.0124, 40.7039]).addTo(map);
+let FSA = buildMarker('restaurants', [-74.009, 40.705]).addTo(map);
+let bkBridge = buildMarker('activities', [-73.9969, 40.7061]).addTo(map)
+
+console.log(doubletree);
+console.log(FSA);
+console.log(bkBridge);
