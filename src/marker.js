@@ -6,14 +6,13 @@ const iconURLs = {
   activities: 'http://i.imgur.com/WbMOfMl.png'
 }
 
-function marker(activity, coords) {
-  let addMarker = new mapboxgl.Marker(activity, coords);
-  addMarker.style.width = '32px';
-  addMarker.style.width = '32px'
-  addMarker.style.height = '39px'
-  addMarker.backgroundImage = `url(http://i.imgur.com/D9574Cu.png)`
-  return addMarker;
+function marker(type, coords) {
+  let newMarker = document.createElement('div')
+  newMarker.style.width = '32px'
+  newMarker.style.height = '39px'
+  newMarker.style.backgroundImage = `url(${iconURLs[type]})`
+
+  return new mapboxgl.Marker(newMarker).setLngLat(coords)
 }
 
-
-module.exports = marker;
+module.exports = marker
